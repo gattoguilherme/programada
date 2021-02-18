@@ -1,0 +1,29 @@
+<app-title [title]="title"></app-title>
+
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Price</th>
+            <th scope="col">Observation</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let forniture of fornitures" style='cursor: pointer;' (click)="editRow(forniture, template)">
+            <th scope="row">{{forniture.name}}</th>
+            <td>{{forniture.price}}</td>
+            <td>{{forniture.observation}}</td>
+        </tr>
+    </tbody>
+</table>
+
+<ng-template #template>
+    <div class="modal-body">
+      <app-forniture-edit></app-forniture-edit>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn pull-right" aria-label="Close" (click)="closeEdit()">
+        Close
+      </button>
+    </div>
+  </ng-template>

@@ -1,0 +1,18 @@
+<form [formGroup]="fornitureForm" (submit)="fornitureSubmit()">
+    <div class="from-group">
+        <label for="formGroupExampleInput" class="form-label">Name</label>
+        <input type="text" formControlName="name" class="form-control">
+    </div>
+    <div class="from-group">
+        <label for="formGroupExampleInput2" class="form-label">Price</label>
+        <input type="text" formControlName="price" class="form-control">
+    </div>
+    <div class="from-group">
+        <label for="formGroupExampleInput2" class="form-label">Observation</label>
+        <input type="text" formControlName="observation" class="form-control">
+    </div>
+    <div class="from-group">
+        <hr>
+        <button class="btn btn-success" [disabled]="!fornitureForm.valid">Save</button>
+    </div>
+</form>
